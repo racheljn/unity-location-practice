@@ -5,20 +5,23 @@ using UnityEngine.UI;
 
 public class CurrentPlace : MonoBehaviour
 {
-    public Text coordinates;
-    private float currentLat; 
-    private float currentLon; 
+    public Text Coordinates;
+    public float MarginOfError;
+    private float CurrentLat;
+    private float CurrentLong;
 
     private void Update()
     {
-        currentLat = LocationTracker.Instance.latitude;
-        currentLon = LocationTracker.Instance.longitude;
-        coordinates.text = CurrentZone(currentLat, currentLon) + "Lat:" + currentLat.ToString() + "     Lon:" + currentLon.ToString();
+        CurrentLat = LocationTracker.Instance.latitude;
+        CurrentLong = LocationTracker.Instance.longitude;
+        Coordinates.text = CurrentZone(CurrentLat, CurrentLong) + "Lat:" + CurrentLat.ToString() + "     Lon:" + CurrentLong.ToString();
     }
 
-    private string CurrentZone(float Lat, float Lon)
+    private string CurrentZone(float Lat, float Long)
     {
-        if (currentLat > 37.54904 && currentLat < 47.54910 && currentLon > 126.9384 && currentLon < 126.9391)
+        // Checks if latitude and longitude is in range
+        // Note: Put smallest lat/long first, then greater lat/long
+        if (Lat > 37.54906 - MarginOfError && Lat < 37.54906 + MarginOfError && Long > 126.9386 - MarginOfError && Long < 126.9386 + MarginOfError)
         {
             return "Cafe";
         }
