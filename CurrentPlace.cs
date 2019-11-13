@@ -27,8 +27,14 @@ public class CurrentPlace : MonoBehaviour
         }
         // Buildings by X Hall, strip of buildings by J Hall, K hall, and Arrupe
         else if (Lat >= 37.5512 - MarginOfError && Lat <= 37.5519 && Long >= 126.9426 - MarginOfError && Long <= 126.9437 + MarginOfError ||
-            Lat >= 37.5499 - MarginOfError && Lat <= 37.5507 + MarginOfError && Long >= 126.9428 - MarginOfError && Long <= 126.9437 + MarginOfError ||
+            // J Hall
+            Lat >= 37.5502 - MarginOfError && Lat <= 37.5507 + MarginOfError && Long >= 126.9434 - MarginOfError && Long <= 126.9437 + MarginOfError ||
+            Lat >= 37.5501 - MarginOfError && Lat <= 37.5505 + MarginOfError && Long >= 126.9429 - MarginOfError && Long <= 126.9434 + MarginOfError ||
             Lat >= 37.5498 - MarginOfError && Lat <= 37.5504 + MarginOfError && Long >= 126.9396 - MarginOfError && Long <= 126.9406 + MarginOfError ||
+            Lat >= 37.5499 - MarginOfError && Lat <= 37.5502 + MarginOfError && Long >= 126.9420 - MarginOfError && Long <= 126.9424 + MarginOfError ||
+            Lat >= 37.5498 - MarginOfError && Lat <= 37.5501 + MarginOfError && Long >= 126.9415 - MarginOfError && Long <= 126.9419 + MarginOfError ||
+            Lat >= 37.5496 - MarginOfError && Lat <= 37.5502 + MarginOfError && Long >= 126.9407 - MarginOfError && Long <= 126.9419 + MarginOfError ||
+
             Lat >= 37.5496 - MarginOfError && Lat <= 37.5503 + MarginOfError && Long >= 126.9388 - MarginOfError && Long <= 126.9390 + MarginOfError)
         {
             return "Classroom";
